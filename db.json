@@ -1,0 +1,7 @@
+{
+  "produtos" : [
+      {"id": 1, "name" : "Matheus Borges"  , "email" : "matheusborges03@live.com"},
+      {"id": 2, "name" : "Adriana Rezende" , "email" : "drikarezende@gmail.com"},
+      {"id": 3, "name" : "Edgar Borges"    , "email" : "edgar.gborges@gmail.com"}
+  ]
+}
