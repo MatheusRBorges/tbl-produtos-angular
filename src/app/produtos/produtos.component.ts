@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../produto.service';
-import { Produtos } from '../produtos';
+import { Produto } from '../produtos';
 
 @Component({
   selector: 'app-produtos',
@@ -10,26 +10,21 @@ import { Produtos } from '../produtos';
 export class ProdutosComponent implements OnInit{
 
 
-  produtos : Produtos[] = [];
-  ProdutosService: any;
+  produtos: Produto[] = [];
 
 
-  constructor (ProdutoService: ProdutoService){}
-
+  constructor (private produtoService: ProdutoService){}
 
   ngOnInit(): void {
-    this.loadProdutos();
-    }
-
-
-    loadProdutos(){
-      this.ProdutosService.getProdutos().subcribe(
-        {
-          next: data => this.produtos = data
-          error: () => console.error("Erro ao Chamar o Endpont");
-           
-        }
-      )
-    }
+     this.loadProduto();
   }
 
+  loadProduto() {
+      this.produtoService.getProduto().subscribe(
+        {
+          next : data => this.produtos = data,
+        }
+      );
+  }
+
+}
